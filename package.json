@@ -1,7 +1,7 @@
 {
   "name": "@atlassian/terminal-dispatch-state",
   "version": "0.0.1",
-  "description": "Re-render terminal contents by updating the state",
+  "description": "A simple library for building dynamic terminal interfaces",
   "scripts": {
     "build": "tsc",
     "lint": "eslint -c .eslintrc.js --ext .ts src/"
@@ -40,5 +40,8 @@
   "peerDependencies": {
     "ora": "^3.4.0"
   },
-  "keywords": ["react", "redux", "terminal", "cli", "cli state"]
+  "keywords": ["react", "redux", "terminal", "cli", "cli state"],
+  "engines": {
+    "node": "^12"
+  }
 }

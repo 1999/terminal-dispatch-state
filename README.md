@@ -1,6 +1,6 @@
 ## terminal-dispatch-state
 
-Re-render terminal contents by updating the state.
+Build dynamic terminal interfaces by updating the state.
 
 ![](./examples/demo.svg)
 
