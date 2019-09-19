@@ -1,12 +1,12 @@
 {
-  "name": "terminal-dispatch-state",
+  "name": "@atlassian/terminal-dispatch-state",
   "version": "0.0.1",
   "description": "Re-render terminal contents by updating the state",
   "scripts": {
     "build": "tsc",
     "lint": "eslint -c .eslintrc.js --ext .ts src/"
   },
-  "author": "Dmitrii Sorin <info@staypositive.ru>",
+  "author": "Dmitrii Sorin <dsorin@atlassian.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^12.7.5",

@@ -7,7 +7,7 @@ Re-render terminal contents by updating the state.
 ## API
 
 ```javascript
-import { Store } from 'terminal-dispatch-state';
+import { Store } from '@atlassian/terminal-dispatch-state';
 import ora from 'ora'; // if you want to show a spinner
 
 const store = new Store();
