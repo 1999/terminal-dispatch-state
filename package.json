@@ -1,0 +1,33 @@
+{
+  "name": "terminal-dispatch-state",
+  "version": "0.0.1",
+  "description": "Update terminal by updating the state",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint -c .eslintrc.js --ext .ts src/"
+  },
+  "author": "Dmitrii Sorin <info@staypositive.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "@types/ora": "^3.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
+    "husky": "^3.0.5",
+    "ora": "^3.4.0",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
+  "dependencies": {
+    "cli-cursor": "^3.1.0"
+  },
+  "peerDependencies": {
+    "ora": "^3.4.0"
+  }
+}
