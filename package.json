@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/1999/terminal-dispatch-state.git"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
