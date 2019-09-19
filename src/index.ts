@@ -43,7 +43,7 @@ export class Store {
     hideCursor();
   }
 
-  dispatch(newState: StateChunk[]) {
+  update(newState: StateChunk[]) {
     if (newState === this.state) {
       return;
     }
@@ -54,7 +54,7 @@ export class Store {
     this.resetIntervalAndRender(cleanLinesBeforeCurrent);
   }
 
-  kill() {
+  stop() {
     if (this.id) {
       clearInterval(this.id);
     }

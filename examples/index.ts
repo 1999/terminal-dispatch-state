@@ -8,14 +8,14 @@ const main = async () => {
   let state: StateChunk[] = [];
 
   state = [{ spinner: ora('Validating package.json...'), isRunning: true }];
-  store.dispatch(state);
+  store.update(state);
   await sleep(1000);
 
   state = [
     { spinner: ora('Validating package.json...'), isRunning: true },
     { spinner: ora('Resolving packages...'), isRunning: true },
   ];
-  store.dispatch(state);
+  store.update(state);
   await sleep(1000);
 
   state = [
@@ -23,7 +23,7 @@ const main = async () => {
     { spinner: ora('Resolving packages...'), isRunning: true },
     { spinner: ora('Fetching packages...'), isRunning: true },
   ];
-  store.dispatch(state);
+  store.update(state);
   await sleep(1000);
 
   state = [
@@ -32,7 +32,7 @@ const main = async () => {
     '✔ Fetching packages',
     { spinner: ora('Linking dependencies...'), isRunning: true },
   ];
-  store.dispatch(state);
+  store.update(state);
   await sleep(1000);
 
   state = [
@@ -42,12 +42,12 @@ const main = async () => {
     { spinner: ora('Linking dependencies...'), isRunning: true },
     { spinner: ora('Building fresh packages...'), isRunning: true },
   ];
-  store.dispatch(state);
+  store.update(state);
   await sleep(1000);
 
   state = ['✔ All done'];
-  store.dispatch(state);
-  store.kill();
+  store.update(state);
+  store.stop();
 };
 
 main();
