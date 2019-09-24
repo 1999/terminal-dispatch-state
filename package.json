@@ -38,7 +38,7 @@
     "cli-cursor": "^3.1.0"
   },
   "peerDependencies": {
-    "ora": "^3.4.0"
+    "ora": "^4.0.0"
   },
   "keywords": ["react", "redux", "terminal", "cli", "cli state"],
   "engines": {
