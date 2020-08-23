@@ -43,7 +43,7 @@ export class Store {
     hideCursor();
   }
 
-  update(newState: StateChunk[]) {
+  update(newState: StateChunk[]): void {
     if (newState === this.state) {
       return;
     }
@@ -54,7 +54,7 @@ export class Store {
     this.resetIntervalAndRender(cleanLinesBeforeCurrent);
   }
 
-  stop() {
+  stop(): void {
     if (this.id) {
       clearInterval(this.id);
     }
@@ -62,7 +62,7 @@ export class Store {
     this.stream.write('\n');
   }
 
-  private resetIntervalAndRender(cleanLinesBeforeCurrent: number) {
+  private resetIntervalAndRender(cleanLinesBeforeCurrent: number): void {
     if (this.id) {
       clearInterval(this.id);
       this.id = setInterval(this.renderScheduled, 100);
@@ -71,7 +71,7 @@ export class Store {
     this.render(cleanLinesBeforeCurrent);
   }
 
-  private renderScheduled = () => {
+  private renderScheduled = (): void => {
     moveCursor(this.stream, 0, 0 - this.state.length);
     cursorTo(this.stream, 0);
 
@@ -83,9 +83,7 @@ export class Store {
           clearLine(this.stream, 0);
           cursorTo(this.stream, 0);
 
-          // @see https://github.com/sindresorhus/ora/pull/126
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          this.stream.write((spinner as any).frame());
+          this.stream.write(spinner.frame());
         }
       }
 
@@ -93,7 +91,7 @@ export class Store {
     }
   }
 
-  private render(cleanLinesBeforeCurrent: number) {
+  private render(cleanLinesBeforeCurrent: number): void {
     // clear `cleanLinesBeforeCurrent` lines before the cursor
     for (let i = 0; i < cleanLinesBeforeCurrent; i++) {
       moveCursor(this.stream, 0, -1);
@@ -107,10 +105,7 @@ export class Store {
 
       if (isOra(chunk)) {
         const { spinner } = chunk;
-
-        // @see https://github.com/sindresorhus/ora/pull/126
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        this.stream.write((spinner as any).frame());
+        this.stream.write(spinner.frame());
       } else {
         this.stream.write(chunk);
       }
@@ -119,7 +114,7 @@ export class Store {
     }
   }
 
-  private debug(...args: string[]) {
+  private debug(...args: string[]): void {
     const timeDiff = Date.now() - this.startedAt;
     const logMessage = `[+${timeDiff}ms] ${JSON.stringify(args)}\n`;
 
